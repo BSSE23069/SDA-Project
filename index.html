@@ -1,7 +1,45 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Ride-Sharing & Cab Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      min-height: 100vh;
+    }
+    .ride-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ride-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .card-title {
+      font-weight: bold;
+    }
+    .btn-custom {
+      background-color: white;
+      color: #2575fc;
+      font-weight: bold;
+    }
+    .btn-custom:hover {
+      background-color: #e2e6ea;
+      color: #1a60c8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-car-front-fill me-2"></i>
         Ride-Sharing & Cab Booking
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -9,11 +47,45 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
           <li class="nav-item"><a class="nav-link" href="add.html">Add Ride</a></li>
           <li class="nav-item"><a class="nav-link" href="list.html">View Rides</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  
+
+  <!-- Dashboard -->
+  <div class="container text-center mt-5">
+    <h1 class="display-5 fw-bold mb-4">Choose Your Ride</h1>
+    <p class="lead mb-5">Select the type of ride you prefer to continue</p>
+
+    <div class="row justify-content-center">
+      <!-- Shared Ride -->
+      <div class="col-md-5 mb-4">
+        <div class="card ride-card bg-light text-dark">
+          <div class="card-body">
+            <i class="bi bi-people-fill display-4 text-primary mb-3"></i>
+            <h5 class="card-title">Shared Ride</h5>
+            <p class="card-text">Affordable option to share your ride with others going in the same direction.</p>
+            <a href="add.html?type=shared" class="btn btn-custom">Book Shared Ride</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Private Ride -->
+      <div class="col-md-5 mb-4">
+        <div class="card ride-card bg-light text-dark">
+          <div class="card-body">
+            <i class="bi bi-person-fill display-4 text-success mb-3"></i>
+            <h5 class="card-title">Private Ride</h5>
+            <p class="card-text">A comfortable private ride just for you. No sharing, just convenience.</p>
+            <a href="add.html?type=private" class="btn btn-custom">Book Private Ride</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
