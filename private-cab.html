@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cab Booking - BusyBee</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fffbea;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar {
+      background-color: #fbee00;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #000;
+    }
+    footer {
+      background-color: #fbee00;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #000;
+    }
+    .fare-details {
+      font-weight: bold;
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="D:\\4th Semester\\Software Design and Archetecture\\SDA-Project\\busybee-logo2.png.png" alt="BusyBee Logo" width="40" height="40" class="me-2">
+        <span>BusyBee</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Cab Booking Form -->
+  <div class="container mt-5">
+    <h3>Book Your Private Cab</h3>
+    <form id="cabBookingForm">
+      <div class="mb-3">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="fullName" required>
+      </div>
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phoneNumber" required>
+      </div>
+      <div class="mb-3">
+        <label for="destination" class="form-label">Destination</label>
+        <select class="form-select" id="destination" required>
+          <option value="" disabled selected>Select your destination</option>
+          <option value="Lahore">Lahore</option>
+          <option value="Islamabad">Islamabad</option>
+          <option value="Faisalabad">Faisalabad</option>
+          <option value="Rawalpindi">Rawalpindi</option>
+          <option value="Multan">Multan</option>
+          <option value="Sialkot">Sialkot</option>
+          <option value="Gujranwala">Gujranwala</option>
+          <option value="Bahawalpur">Bahawalpur</option>
+          <option value="Sargodha">Sargodha</option>
+          <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="carType" class="form-label">Car Type</label>
+        <select class="form-select" id="carType" required>
+          <option value="" disabled selected>Select car type</option>
+          <option value="Economy">Economy</option>
+          <option value="Comfort">Comfort</option>
+          <option value="Business">Business</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="pickupTime" class="form-label">Pickup Time</label>
+        <input type="datetime-local" class="form-control" id="pickupTime" required>
+      </div>
+      <div class="fare-details" id="fareDetails" style="display: none;">
+        <p><strong>Estimated Fare:</strong> <span id="fareAmount">0</span> PKR</p>
+      </div>
+      <button type="submit" class="btn btn-warning text-dark">Confirm Booking</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 BusyBee. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Fare calculation based on car type
+    const fares = {
+      Economy: 500,
+      Comfort: 1000,
+      Business: 1500
+    };
+
+    document.getElementById("cabBookingForm").addEventListener("change", function() {
+      const destination = document.getElementById("destination").value;
+      const carType = document.getElementById("carType").value;
+
+      if (destination && carType) {
+        const fareAmount = fares[carType]; // Get the fare for selected car type
+        document.getElementById("fareAmount").textContent = fareAmount;
+        document.getElementById("fareDetails").style.display = "block";
+      }
+    });
+
+    // Optional: Submit form
+    document.getElementById("cabBookingForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent page reload
+      alert("Booking confirmed! We will contact you shortly.");
+      // You can further add functionality to send data to server or handle booking
+    });
+  </script>
+
+</body>
+</html>

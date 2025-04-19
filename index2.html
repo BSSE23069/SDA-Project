@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BusyBee - Cab Booking & Ride Sharing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fffbea;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar {
+      background-color: #fbee00;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #000;
+    }
+    .hero {
+      background-color: #fffacd;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #222;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .feature-card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    .card-icon {
+      font-size: 50px;
+      color: #f4b400;
+    }
+    footer {
+      background-color: #fbee00;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="D:\\4th Semester\\Software Design and Archetecture\\SDA-Project\\busybee-logo2.png.png" alt="BusyBee Logo" width="40" height="40" class="me-2">
+        <span>BusyBee</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <img src="D:\\4th Semester\\Software Design and Archetecture\\SDA-Project\\busybee-logo2.png.png" alt="BusyBee Logo" style="max-width: 250px; height: auto;" class="mb-4">
+      <h1>Welcome to BusyBee</h1>
+      <p>Your trusted solution for Cab Booking & Ride Sharing</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Cab Booking -->
+        <div class="col-md-6">
+          <div class="card feature-card p-4 text-center">
+            <div class="card-icon">🚗</div>
+            <h4 class="mt-3">Private Cab Booking</h4>
+            <p>Book an entire car just for yourself or your family. Enjoy a comfortable and private ride to your destination.</p>
+            <a href="private-cab.html" class="btn btn-warning text-dark">Book Now</a>
+
+          </div>
+        </div>
+
+        <!-- Ride Sharing -->
+        <div class="col-md-6">
+          <div class="card feature-card p-4 text-center">
+            <div class="card-icon">🤝</div>
+            <h4 class="mt-3">Ride Sharing</h4>
+            <p>Share your ride with others going the same way. It's budget-friendly and eco-friendly.</p>
+            <a href="ride-sharing.html" class="btn btn-warning text-dark">Find a Ride</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 BusyBee. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
