@@ -40,7 +40,7 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="D:\\4th Semester\\Software Design and Archetecture\\SDA-Project\\busybee-logo2.png.png" alt="BusyBee Logo" width="40" height="40" class="me-2">
+        <img src="busybee.png" alt="BusyBee Logo" width="40" height="40" class="me-2">
         <span>BusyBee</span>
       </a>
     </div>
@@ -100,32 +100,5 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Fare calculation based on car type
-    const fares = {
-      Economy: 500,
-      Comfort: 1000,
-      Business: 1500
-    };
-
-    document.getElementById("cabBookingForm").addEventListener("change", function() {
-      const destination = document.getElementById("destination").value;
-      const carType = document.getElementById("carType").value;
-
-      if (destination && carType) {
-        const fareAmount = fares[carType]; // Get the fare for selected car type
-        document.getElementById("fareAmount").textContent = fareAmount;
-        document.getElementById("fareDetails").style.display = "block";
-      }
-    });
-
-    // Optional: Submit form
-    document.getElementById("cabBookingForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent page reload
-      alert("Booking confirmed! We will contact you shortly.");
-      // You can further add functionality to send data to server or handle booking
-    });
-  </script>
-
 </body>
 </html>
